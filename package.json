@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/TomDotBat/osu-auto-mute/issues"
   },
-  "homepage": "https://github.com/TomDotBat/osu-auto-mute#readme"
+  "homepage": "https://github.com/TomDotBat/osu-auto-mute#readme",
+  "dependencies": {
+    "discord-rpc": "^3.1.4",
+    "node-fetch": "^2.6.1",
+    "ws": "^7.3.1"
+  }
 }
