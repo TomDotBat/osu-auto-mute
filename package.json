@@ -21,5 +21,7 @@
     "url": "https://github.com/TomDotBat/osu-auto-mute/issues"
   },
   "homepage": "https://github.com/TomDotBat/osu-auto-mute#readme",
-  "dependencies": {}
+  "dependencies": {
+    "active-win": "^6.2.0"
+  }
 }
