@@ -4,7 +4,7 @@
   "description": "Automatically mute yourself in Discord when playing an osu! map.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ."
   },
   "repository": {
     "type": "git",
@@ -20,8 +20,10 @@
   "bugs": {
     "url": "https://github.com/TomDotBat/osu-auto-mute/issues"
   },
-  "homepage": "https://github.com/TomDotBat/osu-auto-mute#readme",
+  "homepage": "https://github.com/TomDotBat/osu-auto-mute",
   "dependencies": {
-    "active-win": "^6.2.0"
+    "active-win": "^6.2.0",
+    "discord-rpc": "^3.1.4",
+    "dotenv": "^8.2.0"
   }
 }
