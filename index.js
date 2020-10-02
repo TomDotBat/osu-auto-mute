@@ -7,7 +7,7 @@ const clientSecret = process.env.APP_CLIENT_SECRET;
 const http = require("http");
 const https = require("https");
 const queryString = require("querystring");
-const activeWin = require("active-win");
+const activeWin = require("active-window");
 const discordRpc = require("discord-rpc");
 
 let ready = false;
@@ -35,16 +35,14 @@ let setMuteState = (shouldMute) => { //This is where we do all of the muting log
     rpc.setVoiceSettings({mute: shouldMute});
 }
 
-setInterval(async () => { //We check if we need to auto-mute here.
+activeWin.getActiveWindow(window => { //We check if we need to auto-mute here.
     if (!ready) return;
+    if (!window) {setMuteState(false); return};
 
-    let activeWindow = await activeWin();
-    if (!activeWindow) {setMuteState(false); return};
+    if (window.app != "osu!") {setMuteState(false); return};
 
-    if (activeWindow.owner.name != "osu!.exe") {setMuteState(false); return};
-
-    setMuteState(activeWindow.title != "osu!");
-}, 100);
+    setMuteState(window.title != "osu!");
+}, -1, 1);
 
 let httpServer = http.createServer((req, res) => { //Initial setup is done via a temporary local web server
     if (req.method != "GET") {res.end(); return};

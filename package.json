@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/TomDotBat/osu-auto-mute",
   "dependencies": {
-    "active-win": "^6.2.0",
+    "active-window": "^0.1.0",
     "discord-rpc": "^3.1.4",
     "dotenv": "^8.2.0"
   }
